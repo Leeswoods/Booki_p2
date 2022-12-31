@@ -1,0 +1,908 @@
+@font-face {
+  font-family: "Relaway";
+  src: url("fonts/Raleway-VariableFont_wght.ttf");
+}
+
+/* VERSION DESKTOP */
+
+/* GENERAL */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Le containaire enfant ne peut pas partir du containaire parent */
+}
+html,
+body {
+  width: 100%; /* Largeur minimale de la fenêtre */
+  height: 100vh; /* Hauteur minimale de la fenêtre */
+}
+body {
+  min-height: 100%; /* hauteur minimale du container */
+  display: flex; /* Permet de mettre la propriété flexbox */
+  flex-direction: column; /* Permet de mettre toute les fenêtre en colonne */
+  font-family: "Relaway"; /* Police d'écriture */
+}
+img {
+  max-width: 100%;
+}
+
+/* HEADER */
+.logo {
+  align-self: center; /* Permet de centrer le logo */
+  float: left; /* Fait floter les logo à gauche */
+  height: 50px; /* Donne une hauteur au logo de 58px */
+  margin-top: 20px; /* Décale le logo en haut de 20px */
+}
+
+/* Générale pour les liens et listes */
+a {
+  text-decoration: none; /* Permet de supprimer la propriété de lien, autrement dit le fait que sa soit souligner */
+  color: black; /* Donne la couleur noir au lien */
+}
+ul {
+  list-style: none; /* Enlève les points à la liste */
+}
+
+.top-container {
+  display: flex; /* Permet de mettre la propriété flexbox */
+  flex-direction: row; /* Met le logo et le menu en ligne */
+  min-height: 100px; /* hauteur minimale du container */
+  padding: 0 50px; /* 0px en haut et bas & 50 px à droite et à gauche*/
+}
+
+.menu-header {
+  float: right; /* Fait le menu les logo à droite */
+  font-family: "Relaway"; /* Police d'écriture */
+  display: inline-flex; /* Met la liste sur la même ligne */
+  flex-grow: 1; /* indique la quantité d'espace restant que l'élément devrait consommer dans un conteneur flexible relativement à la taille des autres éléments du même conteneur. */
+  justify-content: flex-end; /* Les éléments sont regroupés à la fin du conteneur selon l'axe principal. Le bord du dernier élément est aligné avec le bord du conteneur. */
+}
+
+.menu-hébergements-activités {
+  display: flex; /* Permet de mettre la propriété flexbox */
+  align-items: center; /* Centre les éléments */
+  padding-left: 20px; /* Ecarte les éléments à gauche */
+  padding-right: 20px; /* Ecarte les éléments à droite */
+}
+
+/* Passage de la souris Hébergement/Activités */
+.menu-hébergements-activités a:hover {
+  color: #0065fc;
+}
+
+/* Passage de la souris Hébergement/Activités ==> créer une bordure en haut */
+.menu-hébergements-activités:hover {
+  border-top: 2px solid #0065fc;
+}
+
+/* MAIN */
+
+/* GENERAL MAIN */
+main {
+  clear: both;
+  font-family: "Relaway";
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* TITRE MAIN + DESCRIPTION */
+.titre {
+  font-weight: bold;
+  font-size: 20px;
+}
+main p {
+  font-size: 17px;
+}
+
+/* FORMULAIRE */
+form {
+  margin-top: 20px;
+}
+input {
+  font-size: 22px;
+  font-family: "Relaway";
+  padding: 5px 5px;
+  position: absolute;
+  left: 70px;
+  border: solid #f2f2f2;
+}
+.button-recherche {
+  background-color: #0065fc;
+  color: white;
+  font-size: 15px;
+  padding: 10px 10px;
+  font-family: "Relaway";
+  border: solid #0065fc;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+  left: 250px;
+  top: -1px;
+}
+
+.icon-recherche-localisation {
+  background-color: #f2f2f2;
+  font-size: 14px;
+  padding: 12px 12px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: solid #f2f2f2;
+  position: relative;
+  left: 0px;
+  top: -1px;
+}
+.search-btn-icon {
+  display: none;
+}
+
+/* Filtres */
+.filtre {
+  display: flex; /* Permet de mettre la propriété Flexbox */
+  align-items: center; /* Met les éléments au centre */
+}
+.filtre-container {
+  margin-top: 50px; /* Marge qui sépare le filtre de la barre de recherche */
+  margin-bottom: 40px; /* Marge prévu pour la card hébergment */
+  font-family: "Relaway"; /* Police d'écriture */
+  font-weight: bold; /* Met le texte en gras */
+  display: flex; /* Permet de mettre la propriété Flexbox */
+  align-items: center; /* Met les éléments au centre */
+}
+.titre-filtre {
+  margin-right: 40px; /* Marge qui sépare le titre Filtre des icônes */
+}
+.icon-texte {
+  border: 2px solid #f2f2f2; /* Les caractéristiques de la bordure qui regroupe l'icône et le texte */
+  height: 55px; /* Hauteur de la bordure qui regroupe l'icône et le texte */
+  border-radius: 30px; /* L'arrondie de la bordure qui regroupe l'icône et le texte */
+  margin-right: 20px; /* Marge qui sépare les icones des autres icones */
+}
+/* Permet de centrer l'icône dans la bordure (bulle: celle en bleu clair) */
+.icon i {
+  display: flex; /* Permet de donner la propriété flexbox */
+  justify-content: center; /* ce qui centre horizontalement l'icône dans la bulle en bleu clair */
+  align-items: center; /* ce qui centre verticalement l'icône dans la bulle en bleu clair */
+}
+/* Permet de centrer l'icône et le texte dans la bordure (la grosse bulle) */
+.Center-icon-texte {
+  display: flex; /* Permet de donner la propriété flexbox */
+  justify-content: space-between; /* Permet d'espacer le texte dans la grande bulle */
+  align-items: center; /* Permet de centrer le texte dans la grande bulle */
+}
+/* Couleur des icônes Filtres + Bordure autour des icônes pour séparer du texte */
+.filtre i {
+  color: #0065fc; /* Couleur des îcones */
+  background-color: #deebff; /* la couleur secondaire en arrière plan */
+  border-radius: 25px; /* Bordure entre l'icône et le texte => ce qui permet de créer un cercle */
+  width: 52px; /* Largeur de la bordure entre l'icône et le texte */
+  height: 52px; /* Hauteur de la bordure entre l'icône et le texte */
+  margin-left: -2px; /* Permet de sortir la bordure bleu clair (qui regroupe l'icône) du côté gauche afin de ne plus voir les bordures de la grosse bulle */
+}
+.filtre a {
+  text-decoration: none; /* Permet de supprimer la propriété de lien, autrement dit le fait que sa soit souligner */
+}
+/* Site pas visité Filtre */
+.filtre a:link {
+  color: black;
+}
+/* Site visité Filtre */
+.filtre a:visited {
+  color: black;
+}
+/* Passage de la souris Filtre */
+.filtre a:hover {
+  color: #0065fc;
+}
+/* Texte dans le filtre : Economique / Familial / Romantique / Animaux autorisés */
+.texte-filtre {
+  height: 50px; /* Donne une hauteur de 50px au Texte dans le filtre*/
+  padding-left: 20px; /* Ecarte de 20 pixel a gauche le texte de l'icône */
+  padding-right: 20px; /* Ecarte de 20 pixel a droite le texte de la bordure */
+  display: flex; /* Permet de donner la propriété flexbox */
+  justify-content: center; /* ce qui centrer horizontalement le texte dans la  grosse bulle */
+  align-items: center; /* ce qui centrer verticalement le texte dans la  grosse bulle */
+}
+
+/* Icône + Description */
+.description-logements {
+  font-family: "Relaway"; /* Police d'écriture */
+  font-size: 15px; /* Taille d'écriture */
+  display: flex; /* Permet de donner la propriété flexbox */
+  align-items: center; /* Permet de centrer l'icone et le texte sur la même ligne */
+}
+.description-logements i {
+  color: #0065fc;
+}
+.icone-info {
+  border: 2px solid #f2f2f2; /* Bordure de l'icone en grise */
+  border-radius: 25px; /* Bordure arrondie de l'icône  => ce qui permet de créer un cercle */
+  width: 25px; /* Largeur de la bordure entre l'icône et le cercle */
+  height: 25px; /* Hauteur de la bordure entre l'icône et le cerlce */
+  display: flex; /* Permet de donner la propriété flexbox */
+  justify-content: center; /* ce qui centre horizontalement l'icône dans la bulle en grise */
+  align-items: center; /* ce qui centrer verticalement l'icône dans la bulle en grise */
+  margin-right: 10px; /* Marge qui sépare l'icone du texte */
+}
+
+/* CARD */
+.flex-card {
+  display: flex; /* Permet de donner la propriété flexbox */
+  flex-direction: row; /* Permet de mettre la card Hébergement & Les plus populaires sur la même ligne */
+  gap: 30px; /* Créer un espace entre la card Hébergement & Les plus populaires */
+}
+.etoile-blue {
+  color: #0065fc; /* Couleurs des 4 icones note Auberge-la-Cannebière */
+}
+.etoile-grey {
+  color: #f2f2f2; /* Couleurs de l'icone notee Auberge-la-Cannebière */
+}
+
+/* CARD HEBERGEMENTS A MARSEILLE */
+.container-card-hébergements {
+  background-color: #f2f2f2; /* Bordure couleur en arrière plan de la card Hébergement à Marseille */
+  border: 50px solid #f2f2f2; /* Bordure de la card Hébergement à Marseille */
+  border-radius: 15px; /* Bordure arrondie de la card Hébergement à Marseille */
+  width: 100%; /* Largeur de la Bordure de la card Hébergement à Marseille */
+  height: 690px; /* Hauteur de la Bordure de la card Hébergement à Marseille */
+  margin-top: 50px; /* Créer une marge en haut entre la card Hébergement à Marseille et l'Icône + Description  */
+}
+.titre-hébergements {
+  margin-top: -20px; /* Créer une marge en haut entre la Bordure de la card Hébergement à Marseille et le Titre Hébergement à Marseille  */
+  font-size: 14px; /* Taille du titre Hébergement à Marseille */
+  font-family: "Relaway"; /* Police d'écriture */
+}
+
+/* Mini card TOP dans HEBERGEMENTS A MARSEILLE  */
+.mini-card-top-hébergements {
+  margin-top: 30px; /* Créer une marge en haut entre la grand card et la mini card */
+  display: flex; /* Permet de donner la propriété flexbox */
+  align-items: center; /* Permet de centrer les images entre elles */
+  gap: 30px; /* Créer un espace entre les cards */
+}
+.mini-card-top {
+  background-color: white; /* Bordure couleur en arrière plan des mini card top */
+  border: 2px solid white; /* Bordure des mini card top */
+  border-radius: 16px; /* Bordure arrondie des mini card top */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 300px; /* Largeur de la Bordure des mini card top */
+  /*max-width: 300px; /* Largeur Maximum de la Bordure des mini card top */
+  height: 250px; /* Hauteur de la Bordure des mini card top */
+}
+/* Lien Card */
+.mini-card-top a {
+  text-decoration: none; /* Permet de supprimer la propriété de lien, autrement dit le fait que sa soit souligner */
+}
+/* Site pas visité sur les cards */
+.mini-card-top a:link {
+  color: black;
+}
+/* Site visité sur les cards */
+.mini-card-top a:visited {
+  color: black;
+}
+/* Passage de la souris sur les cards */
+.mini-card-top a:hover {
+  color: #0065fc;
+}
+
+/* Mini card BOTTOM dans HEBERGEMENTS A MARSEILLE  */
+.mini-card-bottom-hébergements {
+  margin-top: 30px; /* Créer une marge en haut entre la grand card et la mini card */
+  display: flex; /* Permet de donner la propriété flexbox */
+  align-items: center; /* Permet de centrer les images entre elles */
+  gap: 30px; /* Créer un espace entre les cards */
+}
+.mini-card-bottom {
+  background-color: white; /* Bordure couleur en arrière plan des mini card bottom */
+  border: 2px solid white; /* Bordure des mini card bottom */
+  border-radius: 16px; /* Bordure arrondie des mini card bottom */
+  width: 300px; /* Largeur de la Bordure des mini card bottom */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  /*max-width: 300px; /* Largeur Maximum des mini card bottom */
+  height: 250px; /* Hauteur de la Bordure des mini card bottom */
+}
+/* Lien Card */
+.mini-card-bottom a {
+  text-decoration: none; /* Permet de supprimer la propriété de lien, autrement dit le fait que sa soit souligner */
+}
+/* Site pas visité sur les cards */
+.mini-card-bottom a:link {
+  color: black;
+}
+/* Site visité sur les cards */
+.mini-card-bottom a:visited {
+  color: black;
+}
+/* Passage de la souris sur les cards */
+.mini-card-bottom a:hover {
+  color: #0065fc;
+}
+
+/* Mini card TOP & BOTTOM dans HEBERGEMENTS A MARSEILLE  */
+.card-image {
+  height: 150px; /* Hauteur de l'image des mini card top & bottom */
+  width: 98%; /* Largeur de l'image des mini card top & bottom */
+  border-top-left-radius: 12px; /* Arrondie en haut à gauche de l'image des mini card top & bottom */
+  border-top-right-radius: 12px; /* Arrondie en haut à droite de l'image des mini card top & bottome */
+  margin-left: 3px; /* Marge à gauche de l'image des mini card top & bottom par rapport card des mini card top & bottom */
+  margin-top: 3px; /* Marge en haut de l'image des mini card top & bottom par rapport des mini card top & bottom */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+}
+.card-body {
+  margin-left: 10px; /* Marge à gauche du corp des mini card top & bottom */
+  margin-top: 5px; /* Marge en haut du corp des mini card top & bottom */
+}
+.card-titre h4 {
+  font-weight: bold; /* Titre des mini card top & bottom mit en gras */
+  font-size: 16px; /* Taille des titres H4 */
+}
+.card-prix p {
+  margin-top: 8px; /* Marge à gauche entre la card des mini card top & bottom et la description du prix */
+  font-size: 15px; /* Taille du prix des mini card top & bottom */
+}
+.card-note i {
+  margin-top: 12px; /* Marge à gauche des icônes par rapport à la card des mini card top & bottom */
+  font-size: 16px; /* Taille des icones note des mini card top & bottom */
+}
+/* Afficher plus */
+.afficher-plus {
+  margin-top: 30px; /* Sépare du haut les minis card au titre afficher plus */
+}
+
+/* CARD LES PLUS POPULAIRES */
+
+.container-card-populaires {
+  background-color: #f2f2f2; /* Bordure couleur en arrière plan de la card Les plus populaires */
+  border: 50px solid #f2f2f2; /* Bordure de la card Les plus populaires */
+  border-radius: 15px; /* Bordure arrondie de la card Les plus populaires */
+  width: 100%; /* Largeur de la Bordure de la card Les plus populaires */
+  height: 690px; /* Hauteur de la Bordure de la card Les plus populaires */
+  margin-top: 50px; /* Créer une marge en haut entre la card Les plus populaires et l'Icône + Description  */
+}
+.titre-populaires {
+  margin-top: -15px; /* Créer une marge en haut entre la Bordure de la card Les plus populaires et le Titre Les plus populaires  */
+  font-size: 14px; /* Taille du titre Les plus populaires */
+  display: flex; /* Permet de donner la propriété flexbox */
+  justify-content: space-between; /* Permet d'espacer le titre Les plus populaires de l'étoile noir */
+}
+
+/* Mini card dans Les plus populaires  */
+.mini-card-populaires {
+  margin-top: 30px; /* Créer une marge en haut entre la grand card et la mini card */
+}
+.mini-card-populaires-right {
+  background-color: white; /* Bordure couleur en arrière plan des mini card populaires */
+  border: 10px solid white; /* Bordure des mini card populaires  */
+  border-radius: 20px; /* Bordure arrondie des mini card populaires  */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 100%; /* Largeur de la Bordure des mini card populaires  */
+  min-width: 300px; /* Largeur Minimum de la Bordure des mini card */
+  height: 160px; /* Hauteur de la Bordure des mini card populaires  */
+  margin-top: 30px; /* Marge en haut entre les mini card populaires*/
+}
+
+/* Lien Card */
+.mini-card-populaires-right a {
+  text-decoration: none; /* Permet de supprimer la propriété de lien, autrement dit le fait que sa soit souligner */
+  display: flex; /* Permet de donner la propriété flexbox */
+  gap: 15px;
+}
+/* Site pas visité sur les cards */
+.mini-card-populaires-right a:link {
+  color: black;
+}
+/* Site visité sur les cards */
+.mini-card-populaires-right a:visited {
+  color: black;
+}
+/* Passage de la souris sur les cards */
+.mini-card-populaires-right a:hover {
+  color: #0065fc;
+}
+.mini-card-populaires-right img {
+  height: 150px; /* Hauteur de l'image des mini card populaires */
+  width: 150px; /* Largeur de l'image des mini card populaires  */
+  border-top-left-radius: 12px; /* Arrondie en haut à gauche de l'image des mini card populaires  */
+  border-bottom-left-radius: 12px; /* Arrondie en haut à droite de l'image des mini card populaires  */
+  margin-left: -4px; /* Marge à gauche de l'image des mini card populaires  par rapport à la card des mini card populaires  */
+  margin-top: -5px; /* Marge en haut de l'image des mini card populaires par rapport à la card des mini card populaires  */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+}
+.card-titre-populaire h4 {
+  font-weight: bold; /* Titre des mini card populaires mit en gras */
+  font-size: 16px; /* Taille du titre des mini card populaires */
+}
+.card-prix-populaire p {
+  margin-top: 5px; /* Marge à gauche entre la card des mini card populaires et la description du prix */
+  font-size: 15px; /* Taille du prix des mini card populaires */
+}
+.card-note-populaire i {
+  margin-top: 70px; /* Marge à gauche des icônes par rapport à la card des mini card populaires */
+  font-size: 16px; /* Taille des icones note des mini card populaires */
+}
+
+/* ACTIVITES A MARSEILLE */
+.titre-activités {
+  font-family: "Relaway"; /* Police d'écriture */
+  margin-top: 40px; /* Marge en haut qui sépare le titre activités à Marseille de la Card Hébergemeent à Marseille */
+}
+.container-activités-marseille {
+  display: flex; /* Permet de donner la propriété flexbox */
+  flex-flow: row; /* Permet de placer tout les blocs en lignes */
+  justify-content: space-between; /* Permet de mettre un espace à tout les blocs */
+  width: 100%; /* Largeur */
+  height: auto; /* Longueur */
+  padding: 5px; /* Permet à certain image d'être côte à côte / Permet de créer un espace pour éviter que les images se chevauchent */
+}
+.flex-activités {
+  display: flex; /* Permet de donner la propriété flexbox */
+  flex-direction: column; /* Permet de mettre en colonne les blocs concernaient */
+  padding-left: 10px; /* Permet à certain image d'être côte à côte / Permet de créer un espace pour éviter que les images se chevauchent */
+  padding-right: 10px; /* Permet à certain image d'être côte à côte / Permet de créer un espace pour éviter que les images se chevauchent */
+}
+.vieux-port {
+  background-color: white; /* Couleur en arrière plan de la card */
+  border-radius: 15px; /* Bordure arrondie de la cards  */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 428px; /* Largeur de la card */
+  height: 637px; /* Longueur de la card */
+  margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
+}
+.fort-de-pomègues {
+  background-color: white; /* Couleur en arrière plan de la card */
+  border-radius: 15px; /* Bordure arrondie de la cards  */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 428px; /* Largeur de la card */
+  height: 303px; /* Longueur de la card*/
+  margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
+}
+.îles-du-frioul {
+  background-color: white; /* Couleur en arrière plan de la card */
+  border-radius: 15px; /* Bordure arrondie de la cards  */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 428px; /* Largeur de la card */
+  height: 303px; /* Longueur de la card */
+  margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
+}
+.parc-national-des-calanques {
+  background-color: white; /* Couleur en arrière plan de la card */
+  border-radius: 15px; /* Bordure arrondie de la cards  */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 428px; /* Largeur de la card */
+  height: 637px; /* Longueur de la card */
+  margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
+}
+.notre-dame-de-la-garde {
+  background-color: white; /* Couleur en arrière plan de la card */
+  border-radius: 15px; /* Bordure arrondie de la cards  */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 428px; /* Largeur de la card */
+  height: 282px; /* Longueur de la card */
+  margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
+}
+.parc-longchamp {
+  background-color: white; /* Couleur en arrière plan de la card */
+  border-radius: 15px; /* Bordure arrondie de la cards  */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+  width: 428px; /* Largeur de la card */
+  height: 325px; /* Longueur de la card */
+  margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
+}
+
+/* IMAGES ACTIVITES A MARSEILLE */
+.img-vieux-port {
+  width: 100%; /* Largeur de l'image' */
+  height: 590px; /* Longueur de l'image' */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+  border-top-left-radius: 15px; /* Bordure arrondie à gauche de l'image */
+  border-top-right-radius: 15px; /* Bordure arrondie à droite de l'image */
+  margin-left: 0px; /* Colle l'image côté gauche */
+  margin-top: 0px; /* Colle l'image côté haut */
+}
+.img-fort-de-pomègues {
+  width: 100%; /* Largeur de l'image' */
+  height: 253px; /* Longueur de l'image' */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+  border-top-left-radius: 15px; /* Bordure arrondie à gauche de l'image */
+  border-top-right-radius: 15px; /* Bordure arrondie à droite de l'image */
+  margin-left: 0px; /* Colle l'image côté gauche */
+  margin-top: 0px; /* Colle l'image côté haut */
+}
+.img-îles-du-frioul {
+  width: 100%; /* Largeur de l'image' */
+  height: 253px; /* Longueur de l'image' */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+  border-top-left-radius: 15px; /* Bordure arrondie à gauche de l'image */
+  border-top-right-radius: 15px; /* Bordure arrondie à droite de l'image */
+  margin-left: 0px; /* Colle l'image côté gauche */
+  margin-top: 0px; /* Colle l'image côté haut */
+}
+.img-parc-national-des-calanques {
+  width: 100%; /* Largeur de l'image' */
+  height: 587px; /* Longueur de l'image' */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+  border-top-left-radius: 15px; /* Bordure arrondie à gauche de l'image */
+  border-top-right-radius: 15px;
+  margin-left: 0px; /* Colle l'image côté gauche */
+  margin-top: 0px; /* Colle l'image côté haut */
+}
+.img-notre-dame-de-la-garde {
+  width: 100%; /* Largeur de l'image' */
+  height: 232px; /* Longueur de l'image' */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+  border-top-left-radius: 15px; /* Bordure arrondie à gauche de l'image */
+  border-top-right-radius: 15px; /* Bordure arrondie à droite de l'image */
+  margin-left: 0px; /* Colle l'image côté gauche */
+  margin-top: 0px; /* Colle l'image côté haut */
+}
+.img-parc-longchamp {
+  width: 100%; /* Largeur de l'image' */
+  height: 275px; /* Longueur de l'image' */
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+  border-top-left-radius: 15px; /* Bordure arrondie à gauche de l'image */
+  border-top-right-radius: 15px; /* Bordure arrondie à droite de l'image */
+  margin-left: 0px; /* Colle l'image côté gauche */
+  margin-top: 0px; /* Colle l'image côté haut */
+}
+
+/* TITRES ACTIVITES A MARSEILLE */
+.titre-activités-marseille {
+  padding-top: 8px; /* Créer une marge en haut entre le titre de la card et l'image de la card */
+  padding-left: 10px; /* Créer une marge à gauche entre le titre de la card et la card */
+  font-family: "Relaway"; /* Police d'écriture */
+  font-size: 19px; /* Taille du titre */
+}
+
+/* FOOTER */
+.footer {
+  background-color: #f2f2f2; /* Couleur de l'arrière plan du footer*/
+  width: 100%; /* Largeur de l'arrière plan */
+  height: 276px; /* Hauteur de l'arrière plan */
+  margin-top: 50px; /* Marge en haut qui sépare les listes du haut de la card Footer (arrière plan gris) */
+  padding: 60px; /* Met au milieu les listes */
+  display: flex; /* Permet la propriété flexbox */
+  justify-content: space-between; /* Créer un espace entre les listes */
+}
+footer ul {
+  width: 100%; /* Largeur des listes : permet de les rapprocher ensemble tout en laissant un espace */
+  font-size: 18px; /* Tailel d'écriture de la liste */
+  font-family: "Relaway"; /* Police d'écriture */
+}
+footer li {
+  margin-bottom: 16px; /* Sépare les listes entre elles */
+}
+.titre-footer {
+  font-weight: bold; /* Permet de mettre les titres en gras */
+}
+
+/* TABLETTE */
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  html,
+  body {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .top-container {
+    display: flex; /* Permet de mettre la propriété flexbox */
+    flex-direction: row; /* Met le logo et le menu en ligne */
+    min-height: 100px; /* hauteur minimale du container */
+    padding: 0 50px; /* 0px en haut et bas & 50 px à droite et à gauche*/
+  }
+  .filtre {
+    display: block;
+    padding-top: 2rem;
+  }
+  .flex-card {
+    flex-direction: column-reverse; /* Permet de mettre en colonne */
+  }
+  .container-card-populaires {
+    width: 105%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+  }
+  .container-card-hébergements {
+    width: 105%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+  }
+  .card-top-bottom {
+    display: flex; /* Permet de mettre la propriété Flexbox */
+    padding-left: 5px; /* Créer un espace entre le côté gauche de la card hébergement avec toutes les mini cards */
+    align-content: center; /* Centre les mini cards dans la card hébergement */
+  }
+  .mini-card-populaires {
+    width: 100%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+  }
+  .mini-card-populaires-right {
+    display: flex; /* Permet de mettre la propriété Flexbox */
+    flex-flow: row wrap; /* Permet de mettre en ligne et de revenir à la ligne quand il n'y a pas de place */
+  }
+  .card-body-populaire {
+    margin-left: 20px; /* Marge à gauche */
+  }
+  .card-body-populaire-chambres-hôtes {
+    margin-left: 20px; /* Marge à gauche */
+  }
+  .mini-card-top-hébergements {
+    display: flex; /* Permet de mettre la propriété Flexbox */
+    flex-flow: row wrap; /* Permet de mettre en ligne et de revenir à la ligne quand il n'y a pas de place */
+  }
+  .mini-card-bottom-hébergements {
+    display: flex; /* Permet de mettre la propriété Flexbox */
+    flex-flow: row wrap; /* Permet de mettre en ligne et de revenir à la ligne quand il n'y a pas de place */
+  }
+  .mini-card-top {
+    margin-top: 10px; /* Marge en haut */
+    width: 300px; /* Largeur des cards */
+  }
+  .mini-card-bottom {
+    margin-top: 10px; /* Marge en haut */
+    width: 300px; /* Largeur des cards */
+  }
+  .titre-hébergements {
+    padding-left: 10px; /* Créer un espace entre le côté gauche de la card hébergement avec le titre */
+  }
+  .afficher-plus {
+    padding-left: 10px; /* Créer un espace entre le côté gauche de la card hébergement avec le lien afficher plus */
+  }
+  .container-activités-marseille {
+    display: flex; /* Permet de donner la propriété flexbox */
+    flex-flow: row wrap; /* Permet de placer tout les blocs en lignes */
+    padding: 0px; /* Permet à certain image d'être côte à côte */
+    width: 110%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+  }
+  .vieux-port {
+    width: 330px;
+  }
+  .parc-national-des-calanques {
+    width: 330px; /* Largeur de la card */
+  }
+  .footer {
+    width: 106%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* HEADER */
+  body {
+    width: auto; /* Largeur du bloc */
+  }
+  main {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .top-container {
+    flex-direction: column; /* Met les éléments en colonne */
+    padding: 15px 0 15px 0px; /* Marge intérieur en haut et en bas */
+    margin-bottom: 45px; /* Marge en bas */
+  }
+  .logo {
+    margin-left: 180px; /* Marge a gauche */
+  }
+  .menu-header {
+    padding-top: 30px; /* Marge intérieur en haut */
+    align-items: center; /* Aligne les éléments au centre */
+  }
+  .menu-hébergements-activités {
+    display: block; /* Propriété qui permet un style de type bloc */
+    text-align: center; /* Aligne le texte au centre */
+    flex-grow: 1; /* Définit le facteur d'expansion d'un élément flexible selon sa dimension principale */
+    padding-bottom: 10px; /* Marge intérieur en bas */
+    border-bottom: 3px solid #f2f2f2; /* Bordure en bas */
+  }
+  .menu-hébergements-activités a:hover {
+    color: #0065fc;
+  }
+  .menu-hébergements-activités:hover {
+    border-top: none;
+    border-bottom: 2px solid #0065fc;
+  }
+  .titre {
+    margin-top: 50px; /* Marge en haut */
+    padding-left: 20px; /* Permet de centre l'élément */
+    padding-right: 20px; /* Permet de centre l'élément */
+  }
+  .version-mobile-paragraphe {
+    padding-left: 20px; /* Permet de centre l'élément */
+    padding-right: 20px; /* Permet de centre l'élément */
+  }
+
+  /* FORMULAIRE */
+  form {
+    margin-top: 50px; /* Marge en haut */
+    padding-left: 20px; /* Permet de centre l'élément */
+    padding-right: 20px; /* Permet de centre l'élément */
+  }
+  input {
+    font-size: 25px; /* Taille */
+    font-family: "Relaway"; /* Police d'écriture */
+    padding: 5px 5px; /* Marge intérieur de tous les côtés */
+    position: absolute; /* Propriété absolute */
+    left: 49px; /* Permet d'espacer à gauche l'élément */
+    border: solid #f2f2f2; /* Créer une bordure */
+  }
+  .icon-recherche-localisation {
+    font-size: 16px; /* Taille */
+    padding: 12px 12px; /* Marge intérieur de tous les côtés */
+    border: solid #f2f2f2; /* Créer une bordure */
+    position: relative; /* Propriété relative */
+    left: -12px; /* Permet d'espacer à gauche l'élément */
+    top: 0px; /* Permet d'espacer en haut l'élément */
+  }
+  .button-recherche {
+    display: none; /* Supprime le boutton recherche celui présent dans la version desktop */
+  }
+  .search-btn-icon {
+    display: block; /* Propriété qui permet un style de type bloc */
+    background-color: #0065fc; /* Couleur arrière plan */
+    color: white; /* Couleur */
+    font-size: 16px; /* Taille */
+    padding: 10px 10px; /* Marge intérieur de tous les côtés */
+    font-family: "Relaway"; /* Police d'écriture */
+    border: solid #0065fc; /* Créer une bordure */
+    border-radius: 10px; /* Créer des arrondie à la bordure */
+    position: relative; /* Propriété relative */
+    left: 313px; /* Permet d'espacer à gauche l'élément */
+    top: -46px; /* Permet d'espacer en haut l'élément */
+  }
+  form {
+    font-size: 16px;
+    flex-grow: 1;
+  }
+
+  /* FILTRE */
+  .filtre {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-direction: column; /* Met en colonne les éléments */
+    padding-left: 20px; /* Permet de centre l'élément */
+    padding-right: 20px; /* Permet de centre l'élément */
+  }
+  .titre-filtre {
+    width: 100%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+    padding-left: 25px; /* Marge intérieur à gauche */
+    margin-top: 20px;
+  }
+  .filtre-container {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-direction: row; /* Met en ligne les éléments */
+    flex-wrap: wrap; /* Si les éléments n'ont pas de place, ils vont à la ligne */
+    flex-grow: 1; /* Définit le facteur d'expansion d'un élément flexible selon sa dimension principale */
+    gap: 15px; /* Qui permet de définir les espaces entre les lignes et entre les colonnes d'une grille */
+    margin-top: 15px;
+  }
+
+  /* Icône + Description */
+  .description-logements {
+    padding-left: 20px; /* Permet de centre l'élément */
+    padding-right: 20px; /* Permet de centre l'élément */
+  }
+  .logements {
+    padding-top: 17px;
+  }
+
+  /* HERBEGEMENT A MARSEILLE + LES PLUS POPULAIRES + ACTIVITES A MARSEILLES */
+  .flex-card {
+    flex-direction: column-reverse; /* Permet de mettre les éléments en colonne et à l'envers */
+  }
+  .container-card-populaires {
+    width: 100%; /* Largeur du bloc */
+    height: auto;
+    border: solid #f2f2f2;
+    padding: 30px 20px 10px 20px;
+  }
+  .icon-étoile-noir {
+    padding-top: 5px;
+  }
+  .mini-card-populaires {
+    width: 100%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+    padding-bottom: 30px; /* Marge */
+  }
+  .mini-card-populaires-right {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-flow: row wrap; /* Permet de mettre en ligne et de revenir à la ligne quand il n'y a pas de place */
+  }
+  .card-body-populaire {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-direction: column; /* Permet de mettre les éléments en colonne */
+    justify-content: space-between; /* Créer de l'espace entre les éléments */
+    padding: 10px; /* Marge */
+    font-size: 5px; /* Taille */
+  }
+  .card-body-populaire-chambres-hôtes {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-direction: column; /* Permet de mettre les éléments en colonne */
+    padding-right: 100px;
+    font-size: 5px; /* Taille */
+    width: 100%;
+  }
+  .card-note-populaire i {
+    margin-top: 54px; /* Marge à gauche des icônes par rapport à la card des mini card populaires */
+    font-size: 16px; /* Taille des icones note des mini card populaires */
+  }
+  .card-image-populaire-chambres-hôtes {
+    width: 100%; /* Largeur image*/
+  }
+  .card-note-chambres-hôtes {
+    margin-top: -55px;
+  }
+
+  .container-card-hébergements {
+    width: 100%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+    background-color: white;
+    border: solid white;
+  }
+  .titre-hébergements {
+    padding-top: 30px; /* Marge */
+    padding-left: 20px; /* Marge */
+  }
+  .mini-card-top-hébergements {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-flow: row wrap; /* Permet de mettre en ligne et de revenir à la ligne quand il n'y a pas de place */
+  }
+  .mini-card-bottom-hébergements {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-flow: row wrap; /* Permet de mettre en ligne et de revenir à la ligne quand il n'y a pas de place */
+  }
+  .card-top-bottom {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+  }
+  .mini-card-top {
+    width: 500px; /* Largeur du bloc */
+  }
+  .mini-card-bottom {
+    width: 500px; /* Largeur du bloc */
+  }
+  .afficher-plus {
+    padding-left: 20px; /* Marge */
+  }
+
+  .titre-activités {
+    padding-left: 20px; /* Marge */
+  }
+  .container-activités-marseille {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-direction: column; /* Permet de mettre les éléments en colonne */
+    width: 100%; /* Largeur */
+    height: auto; /* Longueur */
+    padding-left: 25px; /* Permet de centre l'élément */
+    padding-right: 25px; /* Permet de centre l'élément */
+  }
+  .card-activité-mobile {
+    background-color: white; /* Couleur en arrière plan de la card */
+    border-radius: 15px; /* Bordure arrondie de la cards  */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
+    width: 346px; /* Largeur de la card */
+    height: 303px; /* Longueur de la card*/
+    margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
+  }
+  .card-image-activité-mobile {
+    width: 100%; /* Largeur de l'image' */
+    height: 253px; /* Longueur de l'image' */
+    object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+    border-top-left-radius: 15px; /* Bordure arrondie à gauche de l'image */
+    border-top-right-radius: 15px; /* Bordure arrondie à droite de l'image */
+    margin-top: 0px; /* Colle l'image côté haut */
+  }
+  .flex-activités {
+    padding: 0px; /* Met les cards activités à Marseille au centre */
+  }
+  /* FOOTER */
+  .footer {
+    display: flex; /* Permet la propriété Flexbox */
+    flex-direction: column; /* Permet de mettre les éléments en colonne */
+    width: 100%; /* Largeur du bloc */
+    height: auto; /* Hauteur du bloc */
+    padding: 5px 30px; /* Permet de centre l'élément */
+  }
+  .titre-footer {
+    padding-top: 20px;
+  }
+}
