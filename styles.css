@@ -627,6 +627,7 @@ footer li {
   .mini-card-top-hébergements {
     display: flex; /* Permet de mettre la propriété Flexbox */
     flex-flow: row wrap; /* Permet de mettre en ligne et de revenir à la ligne quand il n'y a pas de place */
+    padding-right: 1rem;
   }
   .mini-card-bottom-hébergements {
     display: flex; /* Permet de mettre la propriété Flexbox */
@@ -634,11 +635,11 @@ footer li {
   }
   .mini-card-top {
     margin-top: 10px; /* Marge en haut */
-    width: 300px; /* Largeur des cards */
+    width: 309px; /* Largeur des cards */
   }
   .mini-card-bottom {
     margin-top: 10px; /* Marge en haut */
-    width: 300px; /* Largeur des cards */
+    width: 309px; /* Largeur des cards */
   }
   .titre-hébergements {
     padding-left: 10px; /* Créer un espace entre le côté gauche de la card hébergement avec le titre */
@@ -717,11 +718,11 @@ footer li {
     padding-right: 20px; /* Permet de centre l'élément */
   }
   input {
-    font-size: 25px; /* Taille */
+    font-size: 24px; /* Taille */
     font-family: "Relaway"; /* Police d'écriture */
     padding: 5px 5px; /* Marge intérieur de tous les côtés */
     position: absolute; /* Propriété absolute */
-    left: 49px; /* Permet d'espacer à gauche l'élément */
+    left: 46px; /* Permet d'espacer à gauche l'élément */
     border: solid #f2f2f2; /* Créer une bordure */
   }
   .icon-recherche-localisation {
@@ -729,7 +730,7 @@ footer li {
     padding: 12px 12px; /* Marge intérieur de tous les côtés */
     border: solid #f2f2f2; /* Créer une bordure */
     position: relative; /* Propriété relative */
-    left: -12px; /* Permet d'espacer à gauche l'élément */
+    left: -14px; /* Permet d'espacer à gauche l'élément */
     top: 0px; /* Permet d'espacer en haut l'élément */
   }
   .button-recherche {
@@ -739,13 +740,13 @@ footer li {
     display: block; /* Propriété qui permet un style de type bloc */
     background-color: #0065fc; /* Couleur arrière plan */
     color: white; /* Couleur */
-    font-size: 16px; /* Taille */
+    font-size: 15px; /* Taille */
     padding: 10px 10px; /* Marge intérieur de tous les côtés */
     font-family: "Relaway"; /* Police d'écriture */
     border: solid #0065fc; /* Créer une bordure */
     border-radius: 10px; /* Créer des arrondie à la bordure */
     position: relative; /* Propriété relative */
-    left: 313px; /* Permet d'espacer à gauche l'élément */
+    left: 287px; /* Permet d'espacer à gauche l'élément */
     top: -46px; /* Permet d'espacer en haut l'élément */
   }
   form {
@@ -872,14 +873,14 @@ footer li {
     flex-direction: column; /* Permet de mettre les éléments en colonne */
     width: 100%; /* Largeur */
     height: auto; /* Longueur */
-    padding-left: 25px; /* Permet de centre l'élément */
-    padding-right: 25px; /* Permet de centre l'élément */
+    padding-left: 15px; /* Permet de centre l'élément */
+    padding-right: 15px; /* Permet de centre l'élément */
   }
   .card-activité-mobile {
     background-color: white; /* Couleur en arrière plan de la card */
     border-radius: 15px; /* Bordure arrondie de la cards  */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Ajoute des ombres à la boîte d'un élément : Première valeur Le décalage horizontal de l'ombre. Deuxième Valeur Le décalage vertical de l'ombre. La troisième valeur L'adoucissement du dégradé. */
-    width: 346px; /* Largeur de la card */
+    width: 326px; /* Largeur de la card */
     height: 303px; /* Longueur de la card*/
     margin-top: 30px; /* Marge en haut qui sépare le titre activités à Marseille de la card */
   }
